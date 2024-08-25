@@ -12,11 +12,10 @@ def karatsuba_multiplication(x : int, y : int) -> int:
     elif len(x_str) > len(y_str):
         y_str = '0' * (len(x_str) - len(y_str)) + y_str
 
-    n = len(x_str)
-
-    if n == 1: # Can be either len(x) or len(y) as we are assumming n digit number for both
+    if len(x_str) == 1: # Can be either len(x) or len(y) as we are assumming n digit number for both
         return x * y
     else:
+        n = len(x_str)
         # First and Second halves of x
         a = int(x_str[:len(x_str) // 2])
         b = int(x_str[len(x_str) // 2:])
@@ -32,6 +31,9 @@ def karatsuba_multiplication(x : int, y : int) -> int:
         pq = karatsuba_multiplication(p, q)
 
         adcb = pq - ac - bd
+
+        if n % 2 != 0:
+            n += 1
 
         return (10 ** n) * ac + (10 ** (n // 2)) * adcb + bd 
 
