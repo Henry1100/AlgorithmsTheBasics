@@ -32,7 +32,7 @@ def karatsuba_multiplication(x : int, y : int) -> int:
 
         adcb = pq - ac - bd
 
-        if n % 2 != 0:
+        if n % 2 != 0: # n should divisible by 2
             n += 1
 
         return (10 ** n) * ac + (10 ** (n // 2)) * adcb + bd 
@@ -41,3 +41,5 @@ def karatsuba_multiplication(x : int, y : int) -> int:
 if __name__ == "__main__":
     result = karatsuba_multiplication(12345678998765432112345678987654321, 1212121212121234343434343434343434444444444)
     print(result == 14964459392443222363386654166355210140914770544956011896745221548821561042524)
+    result_2 = karatsuba_multiplication(99999, 9999)
+    print(f"{result_2: ,}")
