@@ -39,4 +39,5 @@ def karatsuba_multiplication(x : int, y : int) -> int:
 
 
 if __name__ == "__main__":
-    print(karatsuba_multiplication(5678, 1234))
+    result = karatsuba_multiplication(12345678998765432112345678987654321, 1212121212121234343434343434343434444444444)
+    print(result == 14964459392443222363386654166355210140914770544956011896745221548821561042524)
